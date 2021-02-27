@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate') %>
+
+    <% for(let novel of novels){ %> 
+        <a href="/novels/<%=novel._id%>">
+            <div class="card mb-3" >
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-fluid" src="<%= novel.image %>" alt="img">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= novel.name %></h5>
+                            <p class="card-text"><%= novel.description %></p>
+                            <p class="card-text">
+                                <small class="text-muted">Added by <%= novel.author.username%></small>
+                            </p>                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    <% } %> 
+
+
+    

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <h1 class="text-center">New novels</h1>
+    <div class="col-6 offset-3">
+        <form action="/novels" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+               <label class="form-label" for="name">name:</label>
+                <input class="form-control" type="text" id="name" name="novels[name]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>  
+            </div>
+
+             <div class="mb-3">
+                <label class="form-label" for="image">Image Url:</label>
+                <input class="form-control" type="text" id="image" name="novels[image]" required> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+             </div>
+
+             <div class="mb-3">
+                <label class="form-label" for="author">novels author:</label>
+                <input class="form-control" type="text" id="author" name="novels[author]" required> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+             </div> 
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" rows="3" name="novels[description]" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+             <div class="mb-3">
+                <button class="btn btn-outline-success" type="submit">Submit</button> 
+             </div>
+            
+        </form> 
+        <a href="/novels">all novels</a>
+    </div>
+</div>
+

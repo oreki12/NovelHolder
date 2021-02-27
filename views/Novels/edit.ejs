@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">Edit This Novel</h1>
+    <div class="col-6 offset-3">
+        <form action="/novels/<%= novel._id %>?_method=PUT" method="POST" class="validated-form" novalidate>
+            <div class="mb-3">              
+                <label class="form-label" for="name">Novel's Name:</label>
+                <input class="form-control" type="text" id="name" name="novels[name]" required value="<%= novel.name %>" >
+                <div class="valid-feedback">
+                    Looks good!
+                </div>  
+            </div>
+
+                <div class="mb-3">
+                <label class="form-label" for="image">Image Url:</label>
+                <input class="form-control" type="text" id="image" name="novels[image]" required value="<%= novel.image %>"> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label" for="author">novels author:</label>
+                <input class="form-control" type="text" id="author" name="novels[author]" required value="<%= novel.author %>"> 
+                <div class="valid-feedback">
+                    Looks good!
+                </div> 
+                </div> 
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Descriptiom</label>
+                <textarea class="form-control" id="description" rows="3" name="novels[description]" required><%= novel.description %></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+                <div class="mb-3">
+                <button class="btn btn-outline-success" type="submit">Submit</button> 
+                </div>
+            
+        </form> 
+        <a href="/novels">all novels</a>
+    </div>
+</div>
